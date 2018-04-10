@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 setContentView(R.layout.activity_courses);
                 return true;
             case R.id.action_stats:
+                setContentView(R.layout.activity_statistics);
                 return true;
             case R.id.action_about:
                 AlertDialog aboutDialog = new AlertDialog.Builder(MainActivity.this).create();
