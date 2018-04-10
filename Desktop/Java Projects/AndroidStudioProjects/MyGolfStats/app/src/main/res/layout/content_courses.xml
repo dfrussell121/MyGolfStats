@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".CoursesActivity"
+    tools:showIn="@layout/activity_courses">
+
+    <RelativeLayout
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <TextView
+            android:id="@+id/textCoursesScreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="@string/CoursesScreen"
+            android:textAppearance="@android:style/TextAppearance.Large" />
+
+        <TextView
+            android:id="@+id/textCourse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/textCoursesScreen"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="75dp"
+            android:text="@string/CourseName"
+            android:textAppearance="@android:style/TextAppearance.Medium" />
+
+        <TextView
+            android:id="@+id/textPar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/textCoursesScreen"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="125dp"
+            android:text="@string/CoursePar"
+            android:textAppearance="@android:style/TextAppearance.Medium" />
+
+        <TextView
+            android:id="@+id/textRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/textCoursesScreen"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="175dp"
+            android:text="@string/CourseRating"
+            android:textAppearance="@android:style/TextAppearance.Medium" />
+
+        <TextView
+            android:id="@+id/textSlope"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/textCoursesScreen"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="224dp"
+            android:text="@string/CourseSlope"
+            android:textAppearance="@android:style/TextAppearance.Medium" />
+
+        <EditText
+            android:id="@+id/editCourse"
+            android:layout_width="266dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textCourse"
+            android:layout_alignParentRight="true"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/editPar"
+            android:layout_width="265dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/editCourse"
+            android:ems="10"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/editRating"
+            android:layout_width="263dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="166dp"
+            android:ems="10"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/editSlope"
+            android:layout_width="262dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/editRating"
+            android:ems="10"
+            android:inputType="numberDecimal" />
+
+        <Button
+            android:id="@+id/buttonViewCourses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="170dp"
+            android:text="@string/ViewCoursesButton" />
+
+        <Button
+            android:id="@+id/buttonAddCourse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="100dp"
+            android:text="@string/AddCourseButton" />
+
+        <Button
+            android:id="@+id/buttonUpdateCourse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="25dp"
+            android:text="@string/UpdateCourseButton" />
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>
