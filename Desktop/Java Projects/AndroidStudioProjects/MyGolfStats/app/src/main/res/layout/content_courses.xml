@@ -9,10 +9,19 @@
     tools:showIn="@layout/activity_courses">
 
     <RelativeLayout
-        android:layout_width="368dp"
-        android:layout_height="495dp"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        android:id="@+id/relativeLayout3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/textCoursesScreen"
@@ -30,7 +39,8 @@
             android:layout_alignParentTop="true"
             android:layout_marginTop="75dp"
             android:text="@string/CourseName"
-            android:textAppearance="@android:style/TextAppearance.Medium" />
+            android:textAppearance="@android:style/TextAppearance.Medium"
+            android:layout_alignRight="@+id/textCoursesScreen" />
 
         <TextView
             android:id="@+id/textPar"
@@ -40,7 +50,8 @@
             android:layout_alignParentTop="true"
             android:layout_marginTop="125dp"
             android:text="@string/CoursePar"
-            android:textAppearance="@android:style/TextAppearance.Medium" />
+            android:textAppearance="@android:style/TextAppearance.Medium"
+            android:layout_alignRight="@+id/textCoursesScreen" />
 
         <TextView
             android:id="@+id/textRating"
@@ -50,7 +61,8 @@
             android:layout_alignParentTop="true"
             android:layout_marginTop="175dp"
             android:text="@string/CourseRating"
-            android:textAppearance="@android:style/TextAppearance.Medium" />
+            android:textAppearance="@android:style/TextAppearance.Medium"
+            android:layout_alignRight="@+id/textCoursesScreen" />
 
         <TextView
             android:id="@+id/textSlope"
@@ -60,7 +72,8 @@
             android:layout_alignParentTop="true"
             android:layout_marginTop="224dp"
             android:text="@string/CourseSlope"
-            android:textAppearance="@android:style/TextAppearance.Medium" />
+            android:textAppearance="@android:style/TextAppearance.Medium"
+            android:layout_alignRight="@+id/textCoursesScreen" />
 
         <EditText
             android:id="@+id/editCourse"

@@ -2,13 +2,17 @@ package com.example.drf.mygolfstats;
 
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class CoursesActivity extends MainActivity {
+public class CoursesActivity extends AppCompatActivity {
+
+    DatabaseHelper myDB;
+
 
     Button btnViewCourses;
     Button btnAddCourse;
@@ -102,6 +106,14 @@ public class CoursesActivity extends MainActivity {
                     }
                 }
         );
+    }
+
+    public void showMessage(String title,String Message){
+        android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
+        builder.setCancelable(true);
+        builder.setTitle(title);
+        builder.setMessage(Message);
+        builder.show();
     }
 
 }

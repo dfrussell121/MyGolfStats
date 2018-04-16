@@ -9,10 +9,19 @@
     tools:showIn="@layout/activity_golfers">
 
     <RelativeLayout
-        android:layout_width="368dp"
-        android:layout_height="495dp"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        android:id="@+id/relativeLayout2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/textGolferScreen"
@@ -21,7 +30,8 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:text="@string/GolferScreen"
-            android:textAppearance="@android:style/TextAppearance.Large" />
+            android:textAppearance="@android:style/TextAppearance.Large"
+            android:layout_alignParentLeft="true" />
 
         <TextView
             android:id="@+id/textFirstName"
@@ -31,7 +41,8 @@
             android:layout_alignParentTop="true"
             android:layout_marginTop="75dp"
             android:text="@string/FirstName"
-            android:textAppearance="@android:style/TextAppearance.Medium" />
+            android:textAppearance="@android:style/TextAppearance.Medium"
+            android:layout_alignRight="@+id/textGolferScreen" />
 
         <TextView
             android:id="@+id/textSurname"
@@ -41,7 +52,8 @@
             android:layout_alignParentTop="true"
             android:layout_marginTop="151dp"
             android:text="@string/Surname"
-            android:textAppearance="@android:style/TextAppearance.Medium" />
+            android:textAppearance="@android:style/TextAppearance.Medium"
+            android:layout_alignRight="@+id/textGolferScreen" />
 
         <TextView
             android:id="@+id/textId"
@@ -51,7 +63,8 @@
             android:layout_alignParentTop="true"
             android:layout_marginTop="224dp"
             android:text="@string/GolferID"
-            android:textAppearance="@android:style/TextAppearance.Medium" />
+            android:textAppearance="@android:style/TextAppearance.Medium"
+            android:layout_alignRight="@+id/textGolferScreen" />
 
         <EditText
             android:id="@+id/editFirstName"
@@ -61,7 +74,8 @@
             android:layout_alignParentTop="true"
             android:layout_marginTop="64dp"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:layout_alignParentRight="true" />
 
         <EditText
             android:id="@+id/editSurname"
@@ -90,7 +104,8 @@
             android:layout_alignParentBottom="true"
             android:layout_alignStart="@+id/textId"
             android:layout_marginBottom="142dp"
-            android:text="@string/AddButton" />
+            android:text="@string/AddButton"
+            android:layout_alignLeft="@+id/textId" />
 
         <Button
             android:id="@+id/buttonViewGolfers"
@@ -99,7 +114,9 @@
             android:layout_alignParentEnd="true"
             android:layout_alignTop="@+id/buttonAddGolfer"
             android:layout_marginEnd="61dp"
-            android:text="@string/ViewListButton" />
+            android:text="@string/ViewListButton"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="61dp" />
 
         <Button
             android:id="@+id/buttonUpdateGolfer"
@@ -108,7 +125,8 @@
             android:layout_alignParentBottom="true"
             android:layout_alignStart="@+id/textId"
             android:layout_marginBottom="53dp"
-            android:text="@string/UpdateButton" />
+            android:text="@string/UpdateButton"
+            android:layout_alignLeft="@+id/textId" />
 
         <Button
             android:id="@+id/buttonDeleteGolfer"
@@ -116,7 +134,8 @@
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/buttonViewGolfers"
             android:layout_alignTop="@+id/buttonUpdateGolfer"
-            android:text="@string/DeleteButton" />
+            android:text="@string/DeleteButton"
+            android:layout_alignLeft="@+id/buttonViewGolfers" />
 
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
