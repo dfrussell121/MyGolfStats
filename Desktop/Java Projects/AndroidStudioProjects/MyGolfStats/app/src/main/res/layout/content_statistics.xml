@@ -20,52 +20,54 @@
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/textStatsScreen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:text="@string/StatsScreen"
-            android:textAppearance="@android:style/TextAppearance.Large"
-            android:layout_alignParentLeft="true" />
+            android:textAppearance="@android:style/TextAppearance.Large" />
 
         <TextView
             android:id="@+id/textGolferId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/editGolferId"
-            android:layout_alignEnd="@+id/textCoursePlayed"
+            android:layout_alignEnd="@+id/textCoursePlayedId"
+            android:layout_alignRight="@+id/textCoursePlayedId"
             android:text="@string/GolferIdNumber"
-            android:textAppearance="@android:style/TextAppearance.Medium"
-            android:layout_alignRight="@+id/textCoursePlayed" />
+            android:textAppearance="@android:style/TextAppearance.Medium" />
 
         <TextView
-            android:id="@+id/textCoursePlayed"
+            android:id="@+id/textCoursePlayedId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/editCoursePlayed"
-            android:layout_toStartOf="@+id/editGolferId"
+            android:layout_alignBaseline="@+id/editCoursePlayedId"
+            android:layout_alignEnd="@+id/textScoreShot"
             android:text="@string/CoursePlayed"
             android:textAppearance="@android:style/TextAppearance.Medium"
-            android:layout_toLeftOf="@+id/editGolferId" />
+            android:layout_alignRight="@+id/textScoreShot" />
 
         <TextView
-            android:id="@+id/textScore"
+            android:id="@+id/textScoreShot"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/editScoreShot"
-            android:layout_alignEnd="@+id/textGolferId"
+            android:layout_toStartOf="@+id/editGolferId"
             android:text="@string/ScoreShot"
             android:textAppearance="@android:style/TextAppearance.Medium"
-            android:layout_alignRight="@+id/textGolferId" />
+            android:layout_toLeftOf="@+id/editGolferId" />
 
         <EditText
             android:id="@+id/editGolferId"
-            android:layout_width="227dp"
+            android:layout_width="196dp"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
@@ -74,25 +76,15 @@
             android:inputType="number" />
 
         <EditText
-            android:id="@+id/editCoursePlayed"
-            android:layout_width="226dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="102dp"
-            android:ems="10"
-            android:inputType="textPersonName" />
-
-        <EditText
             android:id="@+id/editScoreShot"
-            android:layout_width="227dp"
+            android:layout_width="193dp"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="164dp"
             android:ems="10"
-            android:inputType="number"
-            android:layout_alignParentRight="true" />
+            android:inputType="number" />
 
         <Button
             android:id="@+id/buttonAddRound"
@@ -111,5 +103,16 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="109dp"
             android:text="@string/ViewStatsButton" />
+
+        <EditText
+            android:id="@+id/editCoursePlayedId"
+            android:layout_width="194dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="100dp"
+            android:ems="10"
+            android:inputType="number"
+            android:layout_alignParentRight="true" />
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

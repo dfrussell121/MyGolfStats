@@ -13,31 +13,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //Golfers Table
     public static final String TABLE_GOLFERS = "golfers";
-    public static final String COLUMN_ID = "id";
+    public static final String COLUMN_GOLFER_ID = "golferId";
     public static final String COLUMN_NAME = "firstName";
     public static final String COLUMN_SURNAME = "surname";
 
     //Courses Table
     public static final String TABLE_COURSES = "courses";
+    public static final String COLUMN_COURSE_ID = "courseId";
     public static final String COLUMN_COURSE = "course";
     public static final String COLUMN_PAR = "par";
     public static final String COLUMN_RATING = "rating";
     public static final String COLUMN_SLOPE = "slope";
-
-//    //Golfers table create statement
-//    public static final String CREATE_TABLE_GOLFERS = "CREATE TABLE " + TABLE_GOLFERS + "("
-//            + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-//            + COLUMN_NAME + " TEXT,"
-//            + COLUMN_SURNAME + " TEXT"
-//            + ")";
-//
-//    //Courses table create statement
-//    public static final String CREATE_TABLE_COURSES = "CREATE TABLE " + TABLE_COURSES + "("
-//            + COLUMN_COURSE + " TEXT PRIMARY KEY,"
-//            + COLUMN_PAR + " INTEGER,"
-//            + COLUMN_RATING + " DOUBLE,"
-//            + COLUMN_SLOPE + " INTEGER"
-//            + ")";
 
 
     public DatabaseHelper(Context context) {
@@ -46,8 +32,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table " + TABLE_GOLFERS +" (ID INTEGER PRIMARY KEY AUTOINCREMENT,NAME TEXT,SURNAME TEXT)");
-        db.execSQL("create table " + TABLE_COURSES +" (COURSE TEXT PRIMARY KEY, PAR INTEGER, RATING DOUBLE, SLOPE INTEGER)");
+        db.execSQL("create table " + TABLE_GOLFERS +" (golferId INTEGER PRIMARY KEY AUTOINCREMENT, firstName TEXT, surname TEXT)");
+        db.execSQL("create table " + TABLE_COURSES +" (courseId INTEGER PRIMARY KEY AUTOINCREMENT, course TEXT, par INTEGER, rating DOUBLE, slope INTEGER)");
     }
 
     @Override
@@ -69,19 +55,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return true;
     }
 
-    public boolean updateGolfer(String id, String firstName, String surname){
+    public boolean updateGolfer(String golferId, String firstName, String surname){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COLUMN_ID, id);
+        contentValues.put(COLUMN_GOLFER_ID, golferId);
         contentValues.put(COLUMN_NAME, firstName);
         contentValues.put(COLUMN_SURNAME, surname);
-        db.update(TABLE_GOLFERS, contentValues, "ID = ?", new String[]{id});
+        db.update(TABLE_GOLFERS, contentValues, "golferId = ?", new String[]{golferId});
         return true;
     }
 
-    public Integer deleteGolfer (String id){
+    public Integer deleteGolfer (String golferId){
         SQLiteDatabase db = this.getWritableDatabase();
-        return db.delete(TABLE_GOLFERS, "ID = ?", new String[] {id});
+        return db.delete(TABLE_GOLFERS, "golferId = ?", new String[] {golferId});
 
     }
 
@@ -105,15 +91,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return true;
     }
 
-    public boolean updateCourse(String course, String par, String rating, String slope){
+    public boolean updateCourse(String courseId, String course, String par, String rating, String slope){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
+        contentValues.put(COLUMN_COURSE_ID, courseId);
         contentValues.put(COLUMN_COURSE, course);
         contentValues.put(COLUMN_PAR, par);
         contentValues.put(COLUMN_RATING, rating);
         contentValues.put(COLUMN_SLOPE, slope);
-        db.update(TABLE_COURSES, contentValues, "ID = ?", new String[]{course});
+        db.update(TABLE_COURSES, contentValues, "courseId = ?", new String[]{courseId});
         return true;
+    }
+
+    public Integer deleteCourse (String courseId){
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABLE_COURSES, "courseId = ?", new String[] {courseId});
+
     }
 
 

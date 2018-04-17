@@ -66,7 +66,7 @@ public class GolfersActivity extends AppCompatActivity {
                         boolean isInserted = myDB.addGolfer(edFirstName.getText().toString(),
                                 edSurname.getText().toString() );
 
-                        if(isInserted == true)
+                        if(isInserted)
                             Toast.makeText(GolfersActivity.this,"Golfer Added",Toast.LENGTH_LONG).show();
                         else
                             Toast.makeText(GolfersActivity.this,"Golfer NOT Added",Toast.LENGTH_LONG).show();
@@ -83,7 +83,7 @@ public class GolfersActivity extends AppCompatActivity {
                         boolean isUpdate = myDB.updateGolfer(edFirstName.getText().toString(),
                                 edSurname.getText().toString(),
                                 edGolferId.getText().toString());
-                        if(isUpdate == true)
+                        if(isUpdate)
                             Toast.makeText(GolfersActivity.this,"Golfer Update",Toast.LENGTH_LONG).show();
                         else
                             Toast.makeText(GolfersActivity.this,"Golfer NOT Updated",Toast.LENGTH_LONG).show();
@@ -141,14 +141,16 @@ public class GolfersActivity extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case R.id.action_golfers:
-                setContentView(R.layout.activity_golfers);
+                Intent golfersIntent = new Intent(GolfersActivity.this, GolfersActivity.class);
+                startActivity(golfersIntent);
                 return true;
             case R.id.action_courses:
-                Intent intent = new Intent(GolfersActivity.this, CoursesActivity.class);
-                startActivity(intent);
+                Intent coursesIntent = new Intent(GolfersActivity.this, CoursesActivity.class);
+                startActivity(coursesIntent);
                 return true;
             case R.id.action_stats:
-                setContentView(R.layout.activity_statistics);
+                Intent statsIntent = new Intent(GolfersActivity.this, StatisticsActivity.class);
+                startActivity(statsIntent);
                 return true;
             case R.id.action_about:
                 AlertDialog aboutDialog = new AlertDialog.Builder(GolfersActivity.this).create();

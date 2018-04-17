@@ -1,14 +1,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/action_golfers"
-        android:title="Golfers" />
+        android:title="@string/action_golfers" />
     <item
         android:id="@+id/action_courses"
-        android:title="Courses" />
+        android:title="@string/action_courses" />
     <item
         android:id="@+id/action_stats"
-        android:title="Statistics" />
+        android:title="@string/action_statistics" />
     <item
         android:id="@+id/action_about"
-        android:title="About" />
+        android:title="@string/action_about" />
 </menu>

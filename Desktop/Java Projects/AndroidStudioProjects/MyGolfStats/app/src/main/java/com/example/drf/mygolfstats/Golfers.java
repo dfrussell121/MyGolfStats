@@ -1,25 +1,25 @@
 package com.example.drf.mygolfstats;
 
 public class Golfers {
-    private int id;
+    private int golferId;
     private String firstName;
     private String surname;
 
     public Golfers(){
     }
 
-    public Golfers(int id, String firstName, String surname) {
-        this.id = id;
+    public Golfers(int golferId, String firstName, String surname) {
+        this.golferId = golferId;
         this.firstName = firstName;
         this.surname = surname;
     }
 
-    public int getId() {
-        return id;
+    public int getGolferId() {
+        return golferId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setGolferId(int golferId) {
+        this.golferId = golferId;
     }
 
     public String getFirstName() {

@@ -2,6 +2,7 @@ package com.example.drf.mygolfstats;
 
 public class Courses {
 
+    public String courseId;
     public String course;
     public int par;
     public int slope;
@@ -11,10 +12,19 @@ public class Courses {
     }
 
     public Courses (String course, int par, double rating, int slope){
+        this.courseId = courseId;
         this.course = course;
         this.par = par;
         this.rating = rating;
         this.slope = slope;
+    }
+
+    public String getCourseId(){
+        return courseId;
+    }
+
+    public void setCourseId(int courseID){
+        this.courseId = courseId;
     }
 
     public String getCourse() {
