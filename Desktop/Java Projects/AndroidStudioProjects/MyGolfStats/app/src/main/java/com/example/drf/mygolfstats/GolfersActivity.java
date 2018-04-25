@@ -140,10 +140,6 @@ public class GolfersActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
 
         switch (item.getItemId()) {
-            case R.id.action_golfers:
-                Intent golfersIntent = new Intent(GolfersActivity.this, GolfersActivity.class);
-                startActivity(golfersIntent);
-                return true;
             case R.id.action_courses:
                 Intent coursesIntent = new Intent(GolfersActivity.this, CoursesActivity.class);
                 startActivity(coursesIntent);

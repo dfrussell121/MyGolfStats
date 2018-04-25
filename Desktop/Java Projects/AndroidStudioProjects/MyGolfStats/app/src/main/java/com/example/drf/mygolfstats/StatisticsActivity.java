@@ -2,6 +2,7 @@ package com.example.drf.mygolfstats;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -9,8 +10,24 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class StatisticsActivity extends AppCompatActivity {
+
+    DatabaseHelper myDB;
+
+    Button btnAddRound;
+    Button btnViewRounds;
+    EditText edGolferId;
+    EditText edCourseId;
+    EditText edScoreShot;
+    EditText edDate;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +35,17 @@ public class StatisticsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_statistics);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        myDB = new DatabaseHelper(this);
 
+        btnAddRound = (Button) findViewById(R.id.buttonAddRound);
+        btnViewRounds = (Button) findViewById(R.id.buttonViewRounds);
+        edGolferId = (EditText) findViewById(R.id.editGolferId);
+        edCourseId = (EditText) findViewById(R.id.editCourseId);
+        edScoreShot = (EditText) findViewById(R.id.editScoreShot);
+        edDate = (EditText) findViewById(R.id.editDate);
+
+        AddData();
+        ViewAllRounds();
     }
 
     @Override
@@ -27,6 +54,50 @@ public class StatisticsActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
         return true;
+    }
+
+    public void AddData() {
+        btnAddRound.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        boolean isInserted = myDB.addRoundPlayed(edGolferId.getText().toString(),
+                                edCourseId.getText().toString(),
+                                edScoreShot.getText().toString());
+                               // edDate.getText().toString());
+
+                        if(isInserted)
+                            Toast.makeText(StatisticsActivity.this,"Round Added",Toast.LENGTH_LONG).show();
+                        else
+                            Toast.makeText(StatisticsActivity.this,"Round NOT Added",Toast.LENGTH_LONG).show();
+                    }
+                }
+        );
+    }
+
+    public void ViewAllRounds() {
+        btnViewRounds.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Cursor res = myDB.getRoundsPlayed();
+                        if(res.getCount() == 0) {
+                            // show message
+                            showMessage("Error","Nothing found");
+                            return;
+                        }
+
+                        StringBuffer buffer = new StringBuffer();
+                        while (res.moveToNext()) {
+                            buffer.append("Course ID#:"+ res.getString(0)+"\n");
+                            buffer.append("Score Shot:"+ res.getString(1)+"\n\n");
+                        }
+
+                        // Show all rounds played
+                        showMessage("Rounds Played",buffer.toString());
+                    }
+                }
+        );
     }
 
     @Override
@@ -43,10 +114,6 @@ public class StatisticsActivity extends AppCompatActivity {
             case R.id.action_courses:
                 Intent coursesIntent = new Intent(StatisticsActivity.this, CoursesActivity.class);
                 startActivity(coursesIntent);
-                return true;
-            case R.id.action_stats:
-                Intent statsIntent = new Intent(StatisticsActivity.this, StatisticsActivity.class);
-                startActivity(statsIntent);
                 return true;
             case R.id.action_about:
                 AlertDialog aboutDialog = new AlertDialog.Builder(StatisticsActivity.this).create();

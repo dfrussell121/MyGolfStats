@@ -154,10 +154,6 @@ public class CoursesActivity extends AppCompatActivity {
                 Intent golfersIntent = new Intent(CoursesActivity.this, GolfersActivity.class);
                 startActivity(golfersIntent);
                 return true;
-            case R.id.action_courses:
-                Intent coursesIntent = new Intent(CoursesActivity.this, CoursesActivity.class);
-                startActivity(coursesIntent);
-                return true;
             case R.id.action_stats:
                 Intent statsIntent = new Intent(CoursesActivity.this, StatisticsActivity.class);
                 startActivity(statsIntent);

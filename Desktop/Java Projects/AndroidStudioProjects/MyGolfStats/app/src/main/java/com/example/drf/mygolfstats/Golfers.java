@@ -1,33 +1,34 @@
 package com.example.drf.mygolfstats;
 
 public class Golfers {
-    private int golferId;
-    private String firstName;
-    private String surname;
+
+    public int golfer_id;
+    public String first_name;
+    public String surname;
 
     public Golfers(){
     }
 
     public Golfers(int golferId, String firstName, String surname) {
-        this.golferId = golferId;
-        this.firstName = firstName;
+        this.golfer_id = golferId;
+        this.first_name = firstName;
         this.surname = surname;
     }
 
-    public int getGolferId() {
-        return golferId;
+    public int getGolfer_id() {
+        return golfer_id;
     }
 
-    public void setGolferId(int golferId) {
-        this.golferId = golferId;
+    public void setGolfer_id(int golfer_id) {
+        this.golfer_id = golfer_id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFirst_name() {
+        return first_name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
     }
 
     public String getSurname() {
